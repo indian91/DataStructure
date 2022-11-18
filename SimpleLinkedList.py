@@ -58,6 +58,10 @@ class LinkedList:
             self.remove_from_first()
         else:
             temp=self.head
-            while temp.next.data!=element:
-                temp=temp.next
-            temp.next=temp.next.next
+            try:
+                while temp.next.data!=element:
+                    temp=temp.next
+            except:
+                return -1
+            else:
+                temp.next=temp.next.next
